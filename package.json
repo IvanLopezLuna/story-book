@@ -21,10 +21,12 @@
   ],
   "scripts": {
     "start": "start-storybook -p 6006",
-    "build": "ToDo:",
+    "build": "yarn clean && tsc && yarn copy-files",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token=46a03b1e3475"
+    "chromatic": "npx chromatic --project-token=46a03b1e3475",
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.css dist/"
   },
   "eslintConfig": {
     "extends": [
@@ -72,7 +74,9 @@
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "0.0.13",
     "babel-loader": "^8.2.5",
-    "chromatic": "^6.7.0"
+    "chromatic": "^6.7.0",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^3.0.2"
   },
   "readme": "ERROR: No README data found!",
   "_id": "33-storybook@0.1.0"
